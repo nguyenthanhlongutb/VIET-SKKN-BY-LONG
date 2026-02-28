@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #161b27;
+  --bg-card: #1c2333;
+  --bg-hover: #232d3f;
+  --border: #2a3547;
+  --border-light: #354160;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-blue: #3b82f6;
+  --accent-blue-dark: #2563eb;
+  --accent-indigo: #6366f1;
+  --accent-green: #10b981;
+  --accent-orange: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-purple: #a855f7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: var(--text-primary);
+  font-size: 13px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+select.input-field {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* Buttons */
+.btn-add {
+  font-size: 11px;
+  padding: 4px 10px;
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--accent-blue);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  background: rgba(59, 130, 246, 0.25);
+}
+
+.btn-remove {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-red);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-remove:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* Document Preview - A4 style */
+.doc-preview {
+  font-family: 'Times New Roman', Times, serif;
+  color: #000;
+  font-size: 13pt;
+  line-height: 1.6;
+}
+
+.doc-preview h1 {
+  font-size: 16pt;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0 10px;
+  page-break-before: auto;
+}
+
+.doc-preview h2 {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #000;
+  margin: 18px 0 8px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.doc-preview h3 {
+  font-size: 13pt;
+  font-weight: bold;
+  color: #000;
+  margin: 14px 0 6px;
+}
+
+.doc-preview h4 {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+  margin: 10px 0 5px;
+}
+
+.doc-preview p {
+  margin: 8px 0;
+  text-align: justify;
+  text-indent: 1.5em;
+}
+
+.doc-preview ul,
+.doc-preview ol {
+  margin: 8px 0 8px 2em;
+}
+
+.doc-preview li {
+  margin: 4px 0;
+}
+
+.doc-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 12pt;
+}
+
+.doc-preview th,
+.doc-preview td {
+  border: 1px solid #666;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.doc-preview th {
+  background: #e8e8e8;
+  font-weight: bold;
+}
+
+.doc-preview td {
+  text-align: left;
+}
+
+.img-placeholder {
+  border: 2px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+  font-size: 12pt;
+  margin: 14px 0;
+  background: #f8fafc;
+}
+
+.chart-container {
+  margin: 16px 0;
+  padding: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.chart-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12pt;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+/* Page cover */
+.doc-cover {
+  text-align: center;
+  padding: 40px 0 20px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 30px;
+}
+
+.doc-cover .ministry {
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.doc-cover .school-name {
+  font-size: 13pt;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.doc-cover .skkn-label {
+  font-size: 18pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+
+.doc-cover .title {
+  font-size: 15pt;
+  font-weight: bold;
+  color: #1a237e;
+  margin: 20px auto;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.doc-cover .meta {
+  font-size: 12pt;
+  margin: 8px 0;
+}
+
+.toc-item {
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.toc-item:hover {
+  color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.toc-item.active {
+  color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.12);
+  font-weight: 600;
+}
+
+/* ── Enhanced SKKN document formatting ────────────────────────────────── */
+
+/* TOC table - borderless with dotted leaders */
+.doc-preview table[style*="border-collapse:collapse"] td {
+  border: none !important;
+  padding: 2px 0 !important;
+  line-height: 1.8;
+}
+
+/* Section heading styles */
+.doc-preview h1 {
+  page-break-before: always;
+  border-top: 2px solid #000;
+  padding-top: 12px;
+  margin-top: 28px;
+}
+
+.doc-preview h1:first-child {
+  border-top: none;
+  page-break-before: avoid;
+}
+
+/* Better section dividers */
+.doc-preview h2 {
+  margin-top: 22px;
+  border-bottom: 1.5px solid #1a237e;
+  color: #1a237e !important;
+  padding-bottom: 5px;
+}
+
+.doc-preview h3 {
+  margin-top: 16px;
+  border-left: 3px solid #1a237e;
+  padding-left: 8px;
+}
+
+/* Better paragraph spacing for Vietnamese academic text */
+.doc-preview p {
+  text-align: justify;
+  margin: 10px 0;
+  line-height: 1.8;
+}
+
+/* No indent inside table cells or specific containers */
+.doc-preview td p,
+.doc-preview th p,
+.doc-preview li p {
+  text-indent: 0;
+}
+
+/* Better table styling */
+.doc-preview table {
+  font-size: 11.5pt;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.doc-preview th {
+  background: #1a237e;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.doc-preview td:first-child {
+  text-align: left;
+}
+
+/* Page break simulation */
+.doc-preview .page-break {
+  border-top: 1px dashed #ccc;
+  margin: 30px 0;
+  position: relative;
+}
+
+/* Image placeholder */
+.img-placeholder {
+  background: linear-gradient(135deg, #f0f4ff, #e8f5e9);
+  border: 2px dashed #3b82f6;
+  border-radius: 8px;
+  padding: 18px 16px;
+  text-align: center;
+  color: #1a237e;
+  font-style: italic;
+  font-size: 11.5pt;
+  margin: 16px 0;
+  line-height: 1.6;
+}
+
+/* Better blockquote for references */
+.doc-preview blockquote {
+  border-left: 4px solid #1a237e;
+  margin: 12px 0 12px 20px;
+  padding: 8px 12px;
+  color: #333;
+  font-style: italic;
+  background: #f8f9ff;
+}
+
+/* Numbered list levels */
+.doc-preview ol {
+  list-style-type: decimal;
+}
+
+.doc-preview ol ol {
+  list-style-type: lower-alpha;
+  margin-left: 1.5em;
+}
+
+.doc-preview ul {
+  list-style-type: disc;
+}
